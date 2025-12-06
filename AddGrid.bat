@@ -1,6 +1,17 @@
 @echo off
 setlocal enabledelayedexpansion
 
+REM === CHECK FOR IMAGEMAGICK ===
+where magick >nul 2>nul
+if %ERRORLEVEL% neq 0 (
+    echo.
+    echo WARNING: ImageMagick is not installed or not found in PATH!
+    echo Please install ImageMagick from: https://imagemagick.org/script/download.php
+    echo.
+    pause
+    exit /b 1
+)
+
 REM === CONFIGURATION ===
 set color=white
 set thickness=1
