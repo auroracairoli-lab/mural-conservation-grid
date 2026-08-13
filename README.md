@@ -50,7 +50,6 @@ Each processed image is exported with a grid applied. The generated output can t
 ## Author
 
 Aurora Cairoli
-
 Ca' Foscari University of Venice
 
 ## Notes
