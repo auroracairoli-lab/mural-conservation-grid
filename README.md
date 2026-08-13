@@ -1,4 +1,4 @@
-# Grid for Conservation Monitoring of Outdoor Murals
+# Grid for mural conservation monitoring
 
 This repository is part of the PhD thesis:
 
@@ -6,52 +6,74 @@ Multifaceted approach to contemporary outdoor mural conservation: condition, int
 
 by Aurora Cairoli
 
-This script was developed for the monitoring and assessment of the state of conservation of outdoor mural paintings. The goal is to apply a grid over an image of the painted surface so that each cell can be visually annotated according to a specific degradation form. The resulting dataset allows the user to quantify the extent of each degradation type by calculating:
+## What this tool does
 
-Number of cells affected by a given degradation form / Total number of cells
+This project is a simple support tool for monitoring the condition of outdoor mural paintings.
 
-This method supports systematic condition assessment and comparison across mural surfaces.
+Its purpose is to generate an optimized grid over an image of the mural so that the surface is divided into cells. Once the grid is applied, the user can visually inspect each cell and mark the type of degradation present.
 
-## Project purpose
+This tool does not calculate percentages or evaluate the degradation automatically.
 
-The application of the grid is used for monitoring the state of conservation of outdoor mural paintings. After the grid is applied, the user obtains an image where each cell can be marked with a certain degradation form. The percentage of damaged cells for each degradation category is then calculated relative to the total number of cells in the image.
+The calculations are performed after the grid has been applied, following the methodology explained in the thesis.
 
-This workflow is useful for:
+## Why this is useful
 
-- documenting mural condition;
-- identifying recurring degradation patterns;
-- comparing conservation states across different surfaces;
-- supporting quantitative analysis in the context of mural heritage monitoring.
+The grid helps the observer:
+
+- divide the mural into comparable units;
+- identify the position of each degradation form;
+- record the extent of deterioration in a systematic way;
+- support visual monitoring over time.
+
+## What is not included
+
+This repository does not contain:
+
+- automatic degradation detection;
+- automatic percentage calculation;
+- a database or statistical analysis tool.
+
+The grid is only the visual support for the analysis. The final calculations are made manually by the user according to the method described in the thesis.
 
 ## Repository contents
 
-- Input/: place the original images here
-- Output/: generated grid images are saved here
-- AddGrid.bat: Windows batch script that overlays the grid on each image
+- Input/: place the mural images here
+- Output/: the processed images with the grid will be saved here
+- AddGrid.bat: Windows script that applies the grid to the images
 
-## Requirements
+## Installation
 
-This project requires ImageMagick to be installed and available in the system PATH.
+This repository is designed for Windows users only.
 
-Download ImageMagick here:
-https://imagemagick.org/script/download.php
+You do not need to know how to code to use it.
+
+To install and set up the project:
+
+1. Download the repository from GitHub:
+   https://github.com/auroracairoli-lab/mural-conservation-grid/archive/refs/heads/main.zip
+2. Extract the ZIP file to a folder on your computer.
+3. Open the extracted folder.
+4. Install ImageMagick, which is required because the script uses it to draw the grid.
+   Download it here:
+   https://imagemagick.org/script/download.php
 
 ## How to use it
 
-1. Install ImageMagick and make sure the magick command is available in your PATH.
-2. Place one or more image files (.jpg, .png, .jpeg) in the Input folder.
-3. Run AddGrid.bat.
-4. The script processes the images and saves the grid-overlaid versions in the Output folder.
+1. Open the extracted repository folder.
+2. Make sure the Input folder exists.
+3. Copy the image or images you want to analyse into the Input folder.
+4. Supported formats are: .jpg, .jpeg, and .png.
+5. Double-click AddGrid.bat or run it from the command prompt.
+6. The script will process the images and save the grid versions in the Output folder.
 
 ## Output
 
-Each processed image is exported with a grid applied. The generated output can then be used for manual conservation assessment, where each cell is evaluated and assigned a degradation form. The percentage of cells with a given degradation condition is then calculated against the total cell count.
+The output files are images with the grid applied. These images are then used for manual assessment of degradation forms cell by cell.
+
+After that, the user can calculate the percentage of cells affected by each degradation form by comparing the number of marked cells with the total number of cells.
 
 ## Author
 
 Aurora Cairoli
+
 Ca' Foscari University of Venice
-
-## Notes
-
-The script is designed for a Windows environment and uses a batch file to automate the grid generation process with ImageMagick commands.
